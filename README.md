@@ -18,7 +18,7 @@
 
 ## Installation
 
-We recommend to install this repo using the package and project manager `uv`. See the [documentation](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer) to install `uv` on your system. To install `kintomo`, run:
+We recommend to install this repo using the package and project manager `uv`. See the [documentation](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer) to install `uv` on your system. To install `kintomo`, use a virtual environment or create a new one with `uv venv`, then run:
 
 ```shell
 uv pip install kintomo
@@ -26,7 +26,7 @@ uv pip install kintomo
 
 ## Notebooks
 
-Examples are provided in the `kintomo/notebooks` directory. To run them:
+Examples are provided in the `kintomo/notebooks` directory. To run them, git clone this repo, create a virtual environment with `uv venv`, and do:
 
 ```shell
 uv run jupyter lab $PATH_TO_NOTEBOOK/notebook.ipynb
