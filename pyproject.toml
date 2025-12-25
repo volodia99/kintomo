@@ -1,7 +1,7 @@
 [project]
 name = "kintomo"
 version = "0.1.0"
-description = "Add your description here"
+description = "Python library to create optically thick kinematic toy models and explore their kinematics, given a user-defined structure and velocity, projected on a grid."
 readme = "README.md"
 authors = [
     { name = "gwf", email = "ysengrin9@gmail.com" }
