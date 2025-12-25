@@ -18,7 +18,11 @@
 
 ## Installation
 
-We recommend to install this repo using the package and project manager `uv`. See the [documentation](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer) to install `uv` on your system. To install `kintomo`, run (***ongoing work***)
+We recommend to install this repo using the package and project manager `uv`. See the [documentation](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer) to install `uv` on your system. To install `kintomo`, run:
+
+```shell
+uv pip install kintomo
+```
 
 ## Notebooks
 
