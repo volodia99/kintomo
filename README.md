@@ -18,9 +18,17 @@
 
 ## Installation
 
-We recommend to install this repo using the package and project manager `uv`. See the [documentation](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer) to install `uv` on your system, then clone this repository. To install `kintomo` (***ongoing***)
+We recommend to install this repo using the package and project manager `uv`. See the [documentation](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer) to install `uv` on your system. To install `kintomo`, run (***ongoing work***)
 
-(...)
+## Notebooks
+
+Examples are provided in the `kintomo/notebooks` directory. To run them:
+
+```shell
+uv run jupyter lab $PATH_TO_NOTEBOOK/notebook.ipynb
+```
+
+with the corresponding path to the notebook.ipynb of your choice.
 
 ## Usage
 
@@ -148,13 +156,3 @@ For more info, see the `notebooks/double_spheres.ipynb` notebook.
 unit_l = 100.0*u.au
 cube = Sculpture.cube(5).to(unit=unit_l)
 ```
-
-## Notebooks
-
-Examples are provided in the `kintomo/notebooks` directory. To run them:
-
-```shell
-uv run jupyter lab $PATH_TO_NOTEBOOK/notebook.ipynb
-```
-
-with the corresponding path to the notebook.ipynb of your choice.
