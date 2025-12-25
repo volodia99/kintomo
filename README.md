@@ -41,7 +41,7 @@ cartesian_cube = Sculpture(x=x0, y=y0, z=z0)
 
 Here, the point cloud is composed of 5 points and is contained inside a cube of length `2`, in the interval `[-1,1]` for every direction.
 
-:information_source: ***Remark:***: You can also use a shorter version where you use directly the `cube` classmethod:
+:information_source: ***Remark***: You can also use a shorter version where you use directly the `cube` classmethod:
 ```python
 cartesian_cube = Sculpture.cube(500000)
 x0, y0, z0 = (cartesian_cube.coordinates[k] for k in ("x","y","z"))
@@ -57,7 +57,7 @@ sculpture = cartesian_cube.carve(
 )
 ```
 
-:information_source: ***Remark:***: There are several shapes that are already defined in `kintomo` if needed, like the cylinder:
+:information_source: ***Remark***: There are several shapes that are already defined in `kintomo` if needed, like the cylinder:
 ```python
 sculpture = Sculpture(x=x0, y=y0, z=z0).carve(
     shape=Shape.cylinder(
@@ -101,7 +101,7 @@ For now, note that the `Velocity` **must** be converted to cartesian if not alre
 - the `phi` coordinate if the native geometry is `"cylindrical"`
 - the `phi` and `theta` coordinates if the native geometry is `"spherical"`
 
-:information_source: ***Remark:***: There are several velocity profiles that are already defined in `kintomo` if needed, e.g.,:
+:information_source: ***Remark***: There are several velocity profiles that are already defined in `kintomo` if needed, e.g.,:
 
 ```python
 velocity = Velocity.keplerian(r=r).to_cartesian(phi=phi)
