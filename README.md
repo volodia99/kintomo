@@ -96,7 +96,7 @@ If the `Shape` is defined with an offset compared to the origin (0,0,0), you can
 
 It is then possible to define the velocity profile, with 4 arguments : the `geometry` (`"cartesian"`,`"cylindrical"`,`"spherical"`) and the 3 components of the velocity (`v1`,`v2`,`v3`) with the correct order depending on the geometry.
 
-Example (spherical) : (v1, v2, v3) $\rightarrow$ (v$_\rm r$, v$_\theta$, v$_\phi$).
+Example (spherical) : (v1, v2, v3) $\rightarrow$ ($\rm v_r$, $\rm v_\theta$, $\rm v_\phi$).
 Example of a userfef velocity profile corresponding to a keplerian profile:
 
 ```python
