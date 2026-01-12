@@ -8,21 +8,12 @@
 
 `kintomo` is still in development, but we are trying to keep breaking changes to a minimum. Possible changes include:
 
-- ENH: improve notebooks
 - DOC: to be added.
-- REL: publish to pipy
 - RFC: keep `projection_deposition_visible` as a rogue function?
 - ENH: add additional shapes as classmethods. 
 - ENH: add optically-thin sculptures.
-- RFC: use `__post_init__` method to automatically convert sculpture and velocity profile to cartesian.
-
-## Installation
-
-We recommend to install this repo using the package and project manager `uv`. See the [documentation](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer) to install `uv` on your system. To install `kintomo`, use a virtual environment or create a new one with `uv venv`, then run:
-
-```shell
-uv pip install kintomo
-```
+- RFC: use `__post_init__` method to automatically convert sculpture and velocity profile to cartesian?
+- ENH: improve notebooks
 
 ## Notebooks
 
@@ -32,7 +23,15 @@ Examples are provided in the `kintomo/notebooks` directory. To run them, git clo
 uv run jupyter lab $PATH_TO_NOTEBOOK/notebook.ipynb
 ```
 
-with the corresponding path to the notebook.ipynb of your choice.
+with the corresponding path to the notebook.ipynb of your choice. See Usage section for more info.
+
+## Installation
+
+We recommend to install this repo using the package and project manager `uv`. See the [documentation](https://docs.astral.sh/uv/getting-started/installation/#standalone-installer) to install `uv` on your system. To install `kintomo`, use a virtual environment or create a new one with `uv venv`, then run:
+
+```shell
+uv pip install kintomo
+```
 
 ## Usage
 
