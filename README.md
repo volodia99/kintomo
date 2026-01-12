@@ -45,6 +45,7 @@ The usual way of using `kintomo` starts with three steps:
 There are several ways of defining a `Sculpture` object. One possibility is to define first a cube of points `cartesian_cube` as a `Sculpture`, with arguments `x`, `y`, `z` (1D arrays):
 
 ```python
+from kintomo.api import Sculpture
 num_points = 5
 x0, y0, z0 = (2 * np.random.rand(num_points) - 1 for _ in range(3))
 cartesian_cube = Sculpture(x=x0, y=y0, z=z0)
@@ -54,6 +55,7 @@ Here, the point cloud is composed of 5 points and is contained inside a cube of 
 
 :information_source: ***Remark***: You can also use a shorter version where you use directly the `cube` classmethod:
 ```python
+from kintomo.api import Sculpture
 cartesian_cube = Sculpture.cube(500000)
 x0, y0, z0 = (cartesian_cube.coordinates[k] for k in ("x","y","z"))
 # equivalent to x0, y0, z0 = (cartesian_cube.x, cartesian_cube.y, cartesian_cube.z) 
@@ -62,6 +64,7 @@ x0, y0, z0 = (cartesian_cube.coordinates[k] for k in ("x","y","z"))
 Then, it is possible to carve a user-defined `Shape`, like a cylinder, from `cartesian_cube`:
 
 ```python
+from kintomo.api import Shape
 cylinder = (x0**2 + y0**2 < 1.0**2) & (abs(z0) < 0.02)
 sculpture = cartesian_cube.carve(
     shape=Shape(cylinder)
@@ -70,6 +73,7 @@ sculpture = cartesian_cube.carve(
 
 :information_source: ***Remark***: There are several shapes that are already defined in `kintomo` if needed, like the cylinder:
 ```python
+from kintomo.api import Sculpture, Shape
 sculpture = Sculpture(x=x0, y=y0, z=z0).carve(
     shape=Shape.cylinder(
         x=x0, 
@@ -100,6 +104,7 @@ Example (spherical) : (v1, v2, v3) $\rightarrow$ ($\rm v_r$, $\rm v_\theta$, $\r
 Example of a userfef velocity profile corresponding to a keplerian profile:
 
 ```python
+from kintomo.api import Velocity, Geometry
 velocity = Velocity(
     geometry=Geometry("cylindrical"),
     v1=np.zeros_like(r),
@@ -115,6 +120,7 @@ For now, note that the `Velocity` **must** be converted to cartesian if not alre
 :information_source: ***Remark***: There are several velocity profiles that are already defined in `kintomo` if needed, e.g.,:
 
 ```python
+from kintomo.api import Velocity
 velocity = Velocity.keplerian(r=r).to_cartesian(phi=phi)
 ```
 
@@ -123,6 +129,7 @@ velocity = Velocity.keplerian(r=r).to_cartesian(phi=phi)
 To define the `Grid` on which will be deposited the point cloud, you can use the `encompass` override method: 
 
 ```python
+from kintomo.api import Grid
 nx, ny, nz = (65, 65, 33)
 grid = Grid.encompass(
     sculpture=sculpture, 
@@ -132,6 +139,7 @@ grid = Grid.encompass(
 
 It is also possible to have a user-defined grid. The following example corresponds to what is performed in the `encompass` override method:
 ```python
+from kintomo.api import Grid
 grid = Grid(
     xedge = np.linspace(2*x.min(), 2*x.max(), nx+1),
     yedge = np.linspace(-2*sculpture.max_size_yz, 2*sculpture.max_size_yz, ny+1),
@@ -156,6 +164,7 @@ For more info, see the `notebooks/double_spheres.ipynb` notebook.
 *`kintomo` & units*. You can dimensionalize your problem with astropy.units using the `to` method:
 
 ```python
+from kintomo.api import Sculpture
 unit_l = 100.0*u.au
 cube = Sculpture.cube(5).to(unit=unit_l)
 ```
